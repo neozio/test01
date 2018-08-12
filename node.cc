@@ -4,8 +4,8 @@
 
 Node::Node(char data) {
 	myData = data;
-	next = 0;
-	prev = 0;
+	next = nullptr;
+	prev = nullptr;
   return;
 }
 
@@ -25,7 +25,7 @@ Node* Node::InsertPreviousNode(char data) {
 	Node* oldPrev = prev;
 	prev = new Node(data);
 	prev->next = this;
-	if (oldPrev != 0) {
+	if (oldPrev != nullptr) {
 		prev->prev = oldPrev;
 		oldPrev->next = prev;
 	}
@@ -36,7 +36,7 @@ Node* Node::InsertNextNode(char data) {
 	Node* oldNext = next;
 	next = new Node(data);
 	next->prev = this;
-	if (oldNext != 0) {
+	if (oldNext != nullptr) {
 		next->next = oldNext;
 		oldNext->prev = next;
 	}
@@ -44,13 +44,13 @@ Node* Node::InsertNextNode(char data) {
 }
 
 bool Node::ErasePreviousNode() {
-	if (prev == 0) {
+	if (prev == nullptr) {
 		return false;
 	}
 	Node* secondPrev = prev->prev;
 	delete prev;
-	if (secondPrev == 0) {
-		prev = 0;
+	if (secondPrev == nullptr) {
+		prev = nullptr;
 	} else {
 		prev = secondPrev;
 		secondPrev->next = this;
@@ -59,13 +59,13 @@ bool Node::ErasePreviousNode() {
 }
 
 bool Node::EraseNextNode() {
-	if (next == 0) {
+	if (next == nullptr) {
 		return false;
 	}
 	Node* secondNext = next->next;
 	delete next;
-	if (secondNext == 0) {
-		next = 0;
+	if (secondNext == nullptr) {
+		next = nullptr;
 	} else {
 		next = secondNext;
 		secondNext->prev = this;
