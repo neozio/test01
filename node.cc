@@ -48,6 +48,7 @@ bool Node::ErasePreviousNode() {
 		return false;
 	}
 	Node* secondPrev = prev->prev;
+	delete prev;
 	if (secondPrev == 0) {
 		prev = 0;
 	} else {
@@ -62,6 +63,7 @@ bool Node::EraseNextNode() {
 		return false;
 	}
 	Node* secondNext = next->next;
+	delete next;
 	if (secondNext == 0) {
 		next = 0;
 	} else {
