@@ -10,7 +10,7 @@
 using namespace std;
 
 class TypingMachine {
-	Node* cursor = new Node('|');
+	Node* cursor;
  public:
   TypingMachine();
   void HomeKey();
