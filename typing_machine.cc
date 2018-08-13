@@ -3,6 +3,7 @@
 #include "typing_machine.h"
 
 TypingMachine::TypingMachine() {
+	cursor = nullptr;
   return;
 }
 
@@ -110,6 +111,11 @@ std::string TypingMachine::Print(char separator) {
 		rightStr = rightStr + right->GetData();
 		right = right->GetNextNode();
 	}
-  return leftStr + cursor->GetData() + rightStr;
+	if (separator == 0) {
+		return leftStr + rightStr;
+	}
+	else {
+		return leftStr + cursor->GetData() + rightStr;
+	}
 }
 
