@@ -11,7 +11,6 @@ using namespace std;
 
 class TypingMachine {
 	Node* cursor = new Node('|');
-	char* fullStr = new char[101];
  public:
   TypingMachine();
   void HomeKey();
