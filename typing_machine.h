@@ -7,7 +7,11 @@
 
 #include "node.h"
 
+using namespace std;
+
 class TypingMachine {
+	Node* cursor = new Node('|');
+	char* fullStr = new char[101];
  public:
   TypingMachine();
   void HomeKey();
@@ -16,6 +20,7 @@ class TypingMachine {
   void RightKey();
   bool TypeKey(char key);
   bool EraseKey();
+  bool IsMaxLength();
   std::string Print(char separator);
 };
 

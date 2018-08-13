@@ -5,8 +5,8 @@
 
 class Node {
 	char myData;
-	Node *next;
-	Node *prev;
+	Node* next;
+	Node* prev;
  public:
   explicit Node(char data);
   char GetData();
