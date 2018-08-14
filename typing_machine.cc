@@ -96,7 +96,7 @@ bool TypingMachine::IsMaxLength() {
 
 std::string TypingMachine::Print(char separator) {
 	if (cursor == nullptr) {
-		cursor = new Node(0);
+		cursor = new Node('\0');
 	}
 	Node* left = cursor->GetPreviousNode();
 	string leftStr = "";
@@ -111,7 +111,7 @@ std::string TypingMachine::Print(char separator) {
 		rightStr = rightStr + right->GetData();
 		right = right->GetNextNode();
 	}
-	if (separator == 0) {
+	if (separator == '\0') {
 		return leftStr + rightStr;
 	}
 	else {
