@@ -3,7 +3,7 @@
 #include "typing_machine.h"
 
 TypingMachine::TypingMachine() {
-	cursor = nullptr;
+	cursor = new Node('\0');
   return;
 }
 
@@ -95,9 +95,6 @@ bool TypingMachine::IsMaxLength() {
 }
 
 std::string TypingMachine::Print(char separator) {
-	if (cursor == nullptr) {
-		cursor = new Node('\0');
-	}
 	Node* left = cursor->GetPreviousNode();
 	string leftStr = "";
 	while (left != nullptr) {
